@@ -56,7 +56,7 @@ def count():
         flg = True
     else:#2重クリック防止用
         if b_count == 1:
-            N = subprocess.Popen('python yolov5/detect2.py --source {0} --class 0 --nosave'.format(textbox_url))
+            N = subprocess.Popen('python yolov5_test/detect2.py --source {0} --class 0 --nosave'.format(textbox_url))
         else:
             messagebox.showinfo("アラート", "処理中です。しばらくお待ちください。")
             print("処理中です。")
@@ -67,7 +67,7 @@ def stop():
     b_count = 0
     count()
     #yolov5の動画出力をさせないための処理
-    target_dir = "yolov5/runs/detect"
+    target_dir = "yolov5_test/runs/detect"
     shutil.rmtree(target_dir)
     os.mkdir(target_dir)
 
